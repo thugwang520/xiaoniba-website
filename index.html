@@ -3,50 +3,287 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>小泥巴开出小荷花 - 官方网站</title>
+    <title>小泥巴开出小荷花 - 一站式教育管理平台</title>
     <style>
-        body { font-family: "Microsoft YaHei", sans-serif; max-width: 1200px; margin: 0 auto; padding: 20px; line-height: 1.8; color: #333; }
-        h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
-        h2 { color: #3498db; margin-top: 30px; }
-        .contact { background-color: #f8f9fa; padding: 15px; border-radius: 8px; margin: 20px 0; }
-        .link-group { margin: 20px 0; }
-        .link-group a { color: #3498db; margin-right: 20px; text-decoration: none; }
-        .link-group a:hover { text-decoration: underline; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        /* 顶部导航栏 */
+        .nav {
+            background-color: #0088ff;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .nav-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-logo {
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+        .nav-menu a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            transition: opacity 0.3s;
+        }
+        .nav-menu a:hover {
+            opacity: 0.8;
+        }
+        /* 通用容器 */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 30px auto;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+        /* Banner模块 */
+        .banner {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 30px;
+        }
+        .banner h1 {
+            font-size: 32px;
+            color: #0088ff;
+            margin-bottom: 10px;
+        }
+        .banner p {
+            font-size: 18px;
+            color: #666;
+        }
+        /* 板块标题通用样式 */
+        .section-title {
+            font-size: 22px;
+            color: #333;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #0088ff;
+            display: inline-block;
+        }
+        /* 平台简介 */
+        .intro p {
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: #555;
+            text-indent: 2em;
+        }
+        /* 核心功能 */
+        .features {
+            margin: 40px 0;
+        }
+        .feature-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .feature-card {
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 20px;
+            transition: box-shadow 0.3s;
+        }
+        .feature-card:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        .feature-card h3 {
+            color: #0088ff;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        .feature-card ul {
+            list-style: disc;
+            padding-left: 20px;
+            color: #666;
+        }
+        .feature-card li {
+            margin-bottom: 8px;
+        }
+        /* 运营主体与联系方式 */
+        .contact {
+            margin: 40px 0;
+            line-height: 2;
+        }
+        .contact p {
+            font-size: 16px;
+            color: #555;
+        }
+        .contact strong {
+            color: #333;
+        }
+        /* 用户协议 */
+        .agreement {
+            margin: 40px 0;
+            background-color: #f9f9f9;
+            padding: 25px;
+            border-radius: 8px;
+        }
+        .agreement h4 {
+            font-size: 18px;
+            margin: 15px 0 10px;
+            color: #333;
+        }
+        .agreement p {
+            font-size: 15px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        /* 底部合规栏 */
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .footer-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .footer p {
+            margin-bottom: 8px;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        .footer a {
+            color: #0088ff;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
-    <h1>小泥巴开出小荷花</h1>
-    <h2>平台简介</h2>
-    <p>小泥巴开出小荷花是一款专注于K12阶段在线教育的移动应用，致力于为学员提供便捷的在线学习体验，为导师提供高效的教学管理工具。平台核心功能覆盖学员课程学习、作业提交与进度跟踪、学习数据统计，以及导师端的课程发布、作业批改、学员管理、学习数据分析等全流程教育服务。</p>
-    <p>平台采用微信授权登录方式，保障用户账号安全；所有学习数据仅存储于用户本地设备及正规云服务器，严格遵守国家网络安全相关法规，保护用户隐私。</p>
-
-    <h2>运营主体信息</h2>
-    <div class="contact">
-        <p><strong>运营主体</strong>：个人（姓名：王凯）</p>
-        <p><strong>联系电话</strong>：17309528003（工作日9:00-18:00接听）</p>
-        <p><strong>联系邮箱</strong>：thug.w@163.com（24小时内回复）</p>
-        <p><strong>平台地址</strong>：宁夏石嘴山市大武口区（仅用于业务沟通，无线下办公）</p>
+    <!-- 顶部导航栏 -->
+    <div class="nav">
+        <div class="nav-container">
+            <div class="nav-logo">小泥巴开出小荷花</div>
+            <div class="nav-menu">
+                <a href="#intro">平台简介</a>
+                <a href="#features">核心功能</a>
+                <a href="#contact">联系我们</a>
+                <a href="#agreement">用户协议</a>
+            </div>
+        </div>
     </div>
 
-    <h2>核心功能</h2>
-    <ul>
-        <li><strong>学员端</strong>：课程在线学习、作业提交、学习进度查询、历史成绩统计、错题本整理；</li>
-        <li><strong>导师端</strong>：课程发布与管理、作业布置与批改、学员学习数据查看、一对一辅导预约；</li>
-        <li><strong>通用功能</strong>：微信快捷登录、个人信息管理、消息通知、意见反馈。</li>
-    </ul>
+    <!-- 主内容容器 -->
+    <div class="container">
+        <!-- Banner模块 -->
+        <div class="banner">
+            <h1>小泥巴开出小荷花</h1>
+            <p>专注K12阶段的一站式在线教育管理平台</p>
+            <p>学员便捷学习 · 导师高效管课 · 微信安全登录</p>
+        </div>
 
-    <h2>用户权益</h2>
-    <p>1. 学员可免费使用基础学习功能，付费课程可自主选择；</p>
-    <p>2. 导师可免费入驻，平台不收取任何入驻费用，仅对增值服务收取合理费用；</p>
-    <p>3. 所有用户均可通过意见反馈通道提交建议，平台将定期优化功能。</p>
+        <!-- 平台简介 -->
+        <div class="intro" id="intro">
+            <h2 class="section-title">平台简介</h2>
+            <p>小泥巴开出小荷花是一款面向K12教育阶段的移动教育管理应用，已完成Expo平台适配，支持安卓端稳定运行。平台聚焦“学-教-管”全流程服务，为学员和导师搭建高效的教学沟通桥梁。</p>
+            <p>平台采用微信官方授权登录机制，不获取用户微信隐私数据，保障账号登录安全；学习数据仅存储于用户本地设备及合规云服务器，严格遵循《网络安全法》《个人信息保护法》，坚决维护用户数据隐私。</p>
+        </div>
 
-    <div class="link-group">
-        <a href="privacy.html">隐私政策（全文）</a>
-        <a href="terms.html">用户服务协议（全文）</a>
+        <!-- 核心功能 -->
+        <div class="features" id="features">
+            <h2 class="section-title">核心功能</h2>
+            <div class="feature-cards">
+                <div class="feature-card">
+                    <h3>学员端功能</h3>
+                    <ul>
+                        <li>微信快捷授权登录，免注册免记密码</li>
+                        <li>课程在线学习与学习资料一键查看</li>
+                        <li>作业在线提交与批改结果实时查询</li>
+                        <li>学习进度可视化跟踪，掌握学习节奏</li>
+                        <li>历史成绩统计与错题自动整理</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>导师端功能</h3>
+                    <ul>
+                        <li>账号密码安全登录，支持自主修改密码</li>
+                        <li>课程发布与教学计划灵活管理</li>
+                        <li>学员作业批量布置与精准批改</li>
+                        <li>多维度学员学习数据统计分析</li>
+                        <li>一对一辅导预约与辅导记录留存</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>通用服务功能</h3>
+                    <ul>
+                        <li>系统消息实时推送，重要通知不遗漏</li>
+                        <li>个人信息自主管理，信息变更及时同步</li>
+                        <li>意见反馈通道，功能优化用户参与</li>
+                        <li>多端数据同步，学习/教学记录不丢失</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 运营主体与联系方式 -->
+        <div class="contact" id="contact">
+            <h2 class="section-title">运营主体与联系方式</h2>
+            <p><strong>运营主体</strong>：王凯（个人）</p>
+            <p><strong>服务地址</strong>：宁夏石嘴山市大武口区（仅支持线上业务沟通，无线下办公点）</p>
+            <p><strong>咨询热线</strong>：17309528003（工作日9:00-18:00专人接听，节假日可留言）</p>
+            <p><strong>官方邮箱</strong>：thug.w@163.com（24小时内回复用户咨询与反馈）</p>
+            <p><strong>技术支持</strong>：Expo移动应用开发平台</p>
+        </div>
+
+        <!-- 用户协议 -->
+        <div class="agreement" id="agreement">
+            <h2 class="section-title">用户服务协议</h2>
+            <p><strong>协议生效条件</strong>：用户通过微信授权登录“小泥巴开出小荷花”应用，即视为已阅读并同意本协议全部条款，受本协议约束。</p>
+            
+            <h4>一、服务范围</h4>
+            <p>1. 平台为用户提供K12阶段在线学习、教学管理等相关服务，具体功能以应用实际上线版本为准；</p>
+            <p>2. 平台有权根据业务发展优化功能模块，重大功能变更将提前7个工作日通过应用内公告告知用户。</p>
+            
+            <h4>二、用户义务</h4>
+            <p>1. 用户需遵守国家法律法规及平台规则，不得利用应用传播违法、违规、低俗等不良内容；</p>
+            <p>2. 妥善保管微信登录账号，因账号泄露、转借导致的一切损失由用户自行承担。</p>
+            
+            <h4>三、隐私保护</h4>
+            <p>1. 平台仅获取微信授权的基础昵称、头像信息，不采集微信好友、聊天记录等隐私数据；</p>
+            <p>2. 用户学习/教学数据仅用于自身服务管理，不向任何第三方机构或个人泄露（法律法规强制要求除外）。</p>
+            
+            <h4>四、其他说明</h4>
+            <p>1. 本协议最终解释权归平台运营主体所有；</p>
+            <p>2. 若用户对协议有异议，可通过官方邮箱联系协商处理。</p>
+        </div>
     </div>
 
-    <p style="margin-top: 50px; color: #666; font-size: 14px;">© 2025 小泥巴开出小荷花 版权所有 | 本平台仅提供教育信息服务，不承担任何教学责任</p>
+    <!-- 底部合规信息栏 -->
+    <div class="footer">
+        <div class="footer-container">
+            <p>©2025 小泥巴开出小荷花 版权所有 | 运营主体：王凯</p>
+            <p>ICP备案号：<strong>【替换为你的真实ICP备案号】</strong> | 技术支持：<a href="https://expo.dev/" target="_blank">Expo</a></p>
+            <p>本网站仅用于应用信息展示，不提供实际课程交易服务</p>
+        </div>
+    </div>
 </body>
 </html>
-
-
